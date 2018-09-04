@@ -1,0 +1,13 @@
+{
+	"client": "./client",
+	"svr": "./server",
+	"miniprogramRoot": "./client",
+	"qcloudRoot": "./server",
+	"setting": {
+		"newFeature": true
+	},
+	"appid": "wxd8621956e243710a",
+	"projectname": "liuwa-backend-cloud",
+	"compileType": "miniprogram",
+	"condition": {}
+}
