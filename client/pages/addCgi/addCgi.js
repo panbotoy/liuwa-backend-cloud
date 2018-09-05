@@ -13,7 +13,7 @@ Page({
         util.showBusy('请求中...')
         var that = this
         qcloud.request({
-            url: `${config.service.host}/weapp/demo`,
+            url: `${config.service.host}/weapp/member`,
             login: false,
             success (result) {
                 util.showSuccess('请求成功完成')
