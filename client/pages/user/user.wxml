@@ -1,4 +1,7 @@
 <!--client/pages/user/user.wxml-->
-<open-data type="userNickName" open-gid="xxxxxx"></open-data>
-<open-data type="userAvatarUrl"></open-data>
-<open-data type="userGender" lang="zh_CN"></open-data>
+<view class="container">
+  <view class="userinfo">
+      <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+      <open-data type="userNickName" open-gid="xxxxxx" class="userinfo-nickname"></open-data>
+  </view>
+</view>
