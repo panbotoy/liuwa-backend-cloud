@@ -19,11 +19,15 @@
       "list": [
         {
           "pagePath": "pages/index/index",
+          "iconPath": "image/icon_home.png",
+          "selectedIconPath": "image/icon_home_selected.png",
           "text": "主页面"
         },
         {
           "pagePath": "pages/user/user",
-          "text": "用户"
+          "iconPath": "image/icon_me.png",
+          "selectedIconPath": "image/icon_me_selected.png",
+          "text": "我的"
         }
       ]
     }
