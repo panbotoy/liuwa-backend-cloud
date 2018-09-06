@@ -10,5 +10,21 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "遛娃活动中心",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "tabBar": {
+      "color": "#7A7E83",
+      "selectedColor": "#3cc51f",
+      "borderStyle": "black",
+      "backgroundColor": "#ffffff",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "主页面"
+        },
+        {
+          "pagePath": "pages/user/user",
+          "text": "用户"
+        }
+      ]
+    }
 }
