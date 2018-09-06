@@ -1,0 +1,4 @@
+<!--client/pages/user/user.wxml-->
+<open-data type="userNickName" open-gid="xxxxxx"></open-data>
+<open-data type="userAvatarUrl"></open-data>
+<open-data type="userGender" lang="zh_CN"></open-data>

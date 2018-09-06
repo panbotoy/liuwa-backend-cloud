@@ -36,4 +36,11 @@
             <text>快速增加 CGI</text>
         </navigator>
     </view>
+
+    <!-- USER PAGE -->
+    <view class="uploader">
+        <navigator url="../user/user" open-type="navigate" class="uploader-text">
+            <text>Test User Page</text>
+        </navigator>
+    </view>
 </view>
