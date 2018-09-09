@@ -2,6 +2,7 @@
 CREATE TABLE member (id BIGINT NOT NULL AUTO_INCREMENT, 
                      email VARCHAR(100) NOT NULL, 
                      phone_number VARCHAR(30),
+                     nick_name VARCHAR(30) NOT NULL,
                      first_name VARCHAR(30) NOT NULL, 
                      last_name VARCHAR(30) NOT NULL, 
                      occupation VARCHAR(50),
@@ -19,10 +20,11 @@ CREATE TABLE member (id BIGINT NOT NULL AUTO_INCREMENT,
                      PRIMARY KEY (id)
 );
 ALTER TABLE `member` ADD UNIQUE `unique_index_i1`(`email`);
+ALTER TABLE `member` ADD UNIQUE `unique_index_i2`(`nick_name`);
 -- create table for baby
 CREATE TABLE baby (id BIGINT NOT NULL AUTO_INCREMENT, 
                    first_name VARCHAR(30) NOT NULL, 
-                   last_name VARCHAR(30) NOT NULL, 
+                   last_name VARCHAR(30), 
                    birthday DATETIME,
                    gender VARCHAR(1),
                    profile_img VARCHAR(200),

@@ -13,6 +13,7 @@ class Member {
     this.id = response.id;
     this.firstName = response.first_name;
     this.lastName = response.last_name;
+    this.nickName = response.nick_name;
     this.email = response.email;
     this.phoneNumber = response.phoneNumber;
     this.occupation = response.occupation;
@@ -36,6 +37,7 @@ class Member {
     dbInput.id = this.id;
     dbInput.first_name = this.firstName;
     dbInput.last_name = this.lastName;
+    dbInput.nick_name = this.nickName;
     dbInput.email = this.email;
     dbInput.phone_number = this.phoneNumber;
     dbInput.occupation = this.occupation;
