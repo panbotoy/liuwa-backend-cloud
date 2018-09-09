@@ -33,6 +33,9 @@ router.get('/message', controllers.message.get)
 router.post('/message', controllers.message.post)
 
 // a controller for member related APIs
-router.get('/member', controllers.member)
+router.get('/member/:id', controllers.member.get)
+router.post('/member', controllers.member.create)
+router.put('/member/:id', controllers.member.update)
+router.get('/member/test/:id', controllers.member.test)
 
 module.exports = router

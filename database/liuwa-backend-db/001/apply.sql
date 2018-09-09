@@ -18,7 +18,7 @@ CREATE TABLE member (id BIGINT NOT NULL AUTO_INCREMENT,
                      is_system_admin VARCHAR(1), -- 'Y' or 'N'
                      PRIMARY KEY (id)
 );
-
+ALTER TABLE `member` ADD UNIQUE `unique_index_i1`(`email`);
 -- create table for baby
 CREATE TABLE baby (id BIGINT NOT NULL AUTO_INCREMENT, 
                    first_name VARCHAR(30) NOT NULL, 

@@ -113,3 +113,53 @@
 - [Wafer2 服务端 SDK API 文档](https://github.com/tencentyun/wafer2-node-sdk/blob/master/API.md)
 - [Wafer2 客户端 SDK 使用文档](https://github.com/tencentyun/wafer2-client-sdk/blob/master/README.md)
 
+# backend development guide:
+a sample request to create member:
+curl -X POST \
+  http://localhost:5757/weapp/member \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 1983cf59-6fab-c108-7663-80f50cbdbaf9' \
+  -d '{
+	"email": "stellamao89@gmail.com",
+	"firstName": "Stella",
+	"lastName": "Mao",
+	"phoneNumber": "215-920-1111",
+	"occupation": "super mother",
+	"profileImageUrl": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
+	"location": {
+		"address1": "007 Pin Oak Drive",
+		"address2": "",
+		"address3": "",
+		"city": "RainyVale",
+		"state": "CA",
+		"country": "USA"
+	}
+}'
+
+a sample request to fetch member
+curl -X GET \
+  http://localhost:5757/weapp/member/15 \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 45ee05cf-88d5-7e3e-004a-459834d43a19'
+
+a sample request to update membercurl -X PUT \
+  http://localhost:5757/weapp/member/16 \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 2cabb34a-9d5c-2fce-ad12-5c2ba8cdcbb1' \
+  -d '{
+	"email": "stellamao892@gmail.com",
+	"firstName": "Stella2",
+	"occupation": "super mother for babies",
+	"profileImageUrl": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
+	"location": {
+		"address1": "007 Pin Oak Drive",
+		"address2": "",
+		"address3": "",
+		"city": "RainyVale",
+		"state": "CA",
+		"country": "USA"
+	}
+}'
