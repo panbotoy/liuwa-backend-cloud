@@ -1,14 +1,13 @@
 // const { mysql } = require('../qcloud')
 const bodyParser = require('body-parser')
 const Member = require('../models/member.js').Member
-const dbConfig = require('../database-config.js')
-const knex = require('knex')(dbConfig.CURRENT_ENV())
-const hostname = require('os').hostname();
+const dbInstance = require('../ds/dbInstance.js').dbInstance.getInstance
+const os = require('os');
 
 async function get(ctx, next) {
   var id = parseFloat(ctx.params.id);
-  console.log(`Trying to fetch member with id ` + id + " host name is : " + hostname)
-  await knex('member').select('*').where('id', id).then(res => {
+  console.log(`Trying to fetch member with id ` + id + " process is : " + JSON.stringify(process.env))
+  await dbInstance(ctx)('member').select('*').where('id', id).then(res => {
     var member = new Member({}).from(res[0]);
     ctx.state.data = {
       'member': member
@@ -20,11 +19,11 @@ async function create(ctx, next) {
   console.log('trying to create member: ' + JSON.stringify(ctx.request.body));
   var member = ctx.request.body;
   // populate system default values for read only fields
-  member.createdAt = knex.fn.now();
-  member.updatedAt = knex.fn.now();
+  member.createdAt = dbInstance(ctx).fn.now();
+  member.updatedAt = dbInstance(ctx).fn.now();
   member.isSystemAdmin = 'N';
   var memberObj = new Member(member);
-  await knex('member').insert(memberObj.toInput()).then(res => {
+  await dbInstance(ctx)('member').insert(memberObj.toInput()).then(res => {
     ctx.state.data = { msg: 'member is ' + JSON.stringify(res) };
   });
 }
@@ -37,12 +36,12 @@ async function update(ctx, next) {
   delete memberPatch.isSystemAdmin;
   delete memberPatch.createdAt;
   // populate system default values for read only fields
-  memberPatch.updatedAt = knex.fn.now();
+  memberPatch.updatedAt = dbInstance(ctx).fn.now();
 
-  await knex('member').select('*').where('id', id).then(res => {
+  await dbInstance(ctx)('member').select('*').where('id', id).then(res => {
     var member = new Member({}).from(res[0]);
     member.update(memberPatch);
-    knex('member').where('id', id).update(member.toInput()).then(res => {
+    dbInstance(ctx)('member').where('id', id).update(member.toInput()).then(res => {
       ctx.state.data = { msg: 'member is ' + JSON.stringify(res) };
     });
   });
