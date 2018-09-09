@@ -1,12 +1,12 @@
 const { mysql } = require('../qcloud')
 const bodyParser = require('body-parser')
-const Member = require('../models/member.js')
+const Member = require('../models/member.js').Member
 
 async function get(ctx, next) {
   var id = parseFloat(ctx.params.id);
   console.log(`Trying to fetch member with id ` + id)
   await mysql('member').select('*').where('id', id).then(res => {
-    var member = new Member.Member({}).from(res[0]);
+    var member = new Member({}).from(res[0]);
     ctx.state.data = {
       'member': member
     };
@@ -20,7 +20,7 @@ async function create(ctx, next) {
   member.createdAt = mysql.fn.now();
   member.updatedAt = mysql.fn.now();
   member.isSystemAdmin = 'N';
-  var memberObj = new Member.Member(member);
+  var memberObj = new Member(member);
   await mysql('member').insert(memberObj.toInput()).then(res => {
     ctx.state.data = { msg: 'member is ' + JSON.stringify(res) };
   });
@@ -37,7 +37,7 @@ async function update(ctx, next) {
   memberPatch.updatedAt = mysql.fn.now();
 
   await mysql('member').select('*').where('id', id).then(res => {
-    var member = new Member.Member({}).from(res[0]);
+    var member = new Member({}).from(res[0]);
     member.update(memberPatch);
     mysql('member').where('id', id).update(member.toInput()).then(res => {
       ctx.state.data = { msg: 'member is ' + JSON.stringify(res) };

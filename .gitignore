@@ -2,4 +2,5 @@
 package-lock.json
 node_modules/
 server/node_modules/
-server/package-lock.json
+# keep packaeg-lock.json in server directory to make sure it guarantees dependency consistency
+# see https://stackoverflow.com/questions/44206782/do-i-commit-the-package-lock-json-file-created-by-npm-5

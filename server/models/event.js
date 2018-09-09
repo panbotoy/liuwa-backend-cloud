@@ -1,5 +1,5 @@
 const AbstractModel = require('./abstractModel.js').AbstractModel
-class Member extends AbstractModel {
+class Event extends AbstractModel {
   from(response) {
     this.id = response.id;
     this.firstName = response.first_name;
@@ -46,4 +46,4 @@ class Member extends AbstractModel {
     return dbInput;
   }
 }
-module.exports.Member = Member;
+module.exports.Event = Event;
