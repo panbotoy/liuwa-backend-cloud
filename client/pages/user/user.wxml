@@ -1,12 +1,11 @@
 <!--client/pages/user/user.wxml-->
+<!--
 <view class="container">
-  <!-- User Info -->
   <view class="userinfo">
       <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
       <open-data type="userNickName" open-gid="xxxxxx" class="userinfo-nickname"></open-data>
   </view>
 
-  <!-- My Activities -->
   <view class="navigateButton">
       <navigator url="../userActivity/userActivity" open-type="navigate" class="navigateText">
           <text>我的活动</text>
@@ -18,5 +17,31 @@
           <text>我的活动</text>
       </navigator>
       <image class="navigateImage" src="resources/icon_arrow_right.png"></image>
+  </view>
+</view>
+-->
+
+<view class="container more">
+  <view class="user flex-wrp">
+    <view class="avatar flex-item">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
+    <view class="user-info flex-item">
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="edit">查看或编辑个人主页</text>
+    </view>
+  </view>
+
+  <view class="my">
+    <view class="my-item flex-wrp">
+      <view class="myitem-name flex-item">
+        <navigator url="../userActivity/userActivity" open-type="navigate">
+          <text>我的活动</text>
+        </navigator>
+      </view>
+      <view class="myitem-icon flex-item" >
+        <image src="../../image/icon_arrow_right.png"></image>
+      </view>
+    </view>
   </view>
 </view>
