@@ -1,10 +1,17 @@
 /* client/pages/user/user.wxss */
+page {
+  background: #F6F6F6;
+}
+
+.container {
+  padding: 20rpx 0;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
@@ -13,7 +20,30 @@
   overflow:hidden;
   display:block;
 }
-
 .userinfo-nickname {
   color: #aaa;
+}
+
+.navigateButton {
+  margin: 20rpx 0;
+  background-color: #FFFFFF;
+  border-radius: 4rpx;
+  overflow: hidden;
+  width: 100%
+}
+.navigateContainer {
+  margin: 20rpx 0;
+  background-color: #FFFFFF;
+  border-radius: 4rpx;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+.navigateText {
+  flex: 1
+}
+.navigateImage {
+  float: right;
+  width: 60rpx;
+  height: 60rpx;
 }
