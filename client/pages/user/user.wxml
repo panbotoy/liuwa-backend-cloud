@@ -28,7 +28,7 @@
     </view>
     <view class="user-info flex-item">
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      <text class="edit">查看或编辑个人主页</text>
+      <text class="edit">修改个人信息</text>
     </view>
   </view>
 

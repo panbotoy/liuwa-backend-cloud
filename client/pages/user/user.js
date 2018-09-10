@@ -1,18 +1,29 @@
 // client/pages/user/user.js
-Page({
+var util = require('../../utils/util.js')
+var app = getApp()
 
+Page({
   /**
    * Page initial data
    */
   data: {
+    userInfo: {}
 
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
-
+  onLoad: function () {
+    console.log('onLoad')
+    var that = this
+    //调用应用实例的方法获取全局数据
+    app.getUserInfo(function (userInfo) {
+      //更新数据
+      that.setData({
+        userInfo: userInfo
+      })
+    })
   },
 
   /**
