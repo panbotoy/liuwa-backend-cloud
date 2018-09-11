@@ -8,8 +8,20 @@ Page({
         userInfo: {},
         logged: false,
         takeSession: false,
-        requestResult: ''
+        requestResult: '',
+        movies: [],
     },
+
+  /**
+   * Lifecycle function--Called when page load
+   */
+  onLoad: function (options) {
+    var movies = util.getEvents();
+    this.setData({
+      movies:movies.data
+    });
+
+  },
 
     // 用户登录示例
     bindGetUserInfo: function () {

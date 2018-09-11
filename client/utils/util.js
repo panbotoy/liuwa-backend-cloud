@@ -1,4 +1,4 @@
-const formatTime = date => {
+  const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
@@ -39,4 +39,11 @@ var showModel = (title, content) => {
     })
 }
 
+var events = require('../testdata/data_events.js')
+
+function getEvents() {
+  return events.movies;
+}
+
 module.exports = { formatTime, showBusy, showSuccess, showModel }
+module.exports.getEvents = getEvents;

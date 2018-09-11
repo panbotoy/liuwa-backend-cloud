@@ -1,0 +1,32 @@
+<!-- Common event list component. -->
+<template name="movie-list">
+  <view class="list">
+    <template is="{{ item.subject ? 'item2' : 'item1' }}" data="{{ item }}" wx:for="{{ movies }}" wx:key="id"/>
+    <view class="tips">
+      <view wx:if="{{ hasMore }}">
+        <image src="/images/loading.gif" mode="aspectFill"/>
+        <text>玩了命的加载中...</text>
+      </view>
+      <view wx:else>
+        <text>没有更多内容了</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- One single event card. -->
+<template name="item2">
+  <navigator url="../item/item?id={{ item.subject.id }}">
+    <view class="item">
+      <image class="poster" src="{{ item.subject.images.small }}"></image>
+      <view class="meta">
+        <text class="title">{{ item.subject.title }}</text>
+        <text class="sub-title">{{ item.subject.original_title }} ({{ item.subject.year }})</text>
+        <view class="artists">导演：<block wx:for="{{ item.directors }}" wx:key="id"> {{ item.name }} </block></view>
+      </view>
+      <view class="rating">
+        <text>{{ item.subject.rating.average }}</text>
+      </view>
+    </view>
+  </navigator>
+</template>
