@@ -1,7 +1,9 @@
 <import src="../eventList/eventList"/>
 <view class="container">
+<!--
   <view class="header">
     <input class="search" placeholder="{{ subtitle }}" placeholder-class="search-placeholder" auto-focus bindchange="handleSearch"/>
   </view>
+-->
   <template is="movie-list" data="{{ movies, loading, hasMore }}"/>
 </view>
