@@ -1,1 +1,2 @@
 /* client/pages/userActivity/userActivity.wxss */
+@import "../eventList/eventList.wxss";

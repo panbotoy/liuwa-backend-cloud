@@ -39,6 +39,11 @@
   color: #888888;
 }
 
+.list .item .info .application {
+  font-size: 24rpx;
+  color: #999;
+}
+
 .list .item .badge text {
   display: inline-block;
   width: 40rpx;

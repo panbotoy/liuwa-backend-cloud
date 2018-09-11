@@ -1,18 +1,22 @@
 // client/pages/userActivity/userActivity.js
+var util = require('../../utils/util.js')
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    myEvents: [],
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    var myEvents = util.getMyEvents();
+    this.setData({
+      myEvents: myEvents.data,
+    });
   },
 
   /**

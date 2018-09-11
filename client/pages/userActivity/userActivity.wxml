@@ -1,2 +1,9 @@
-<!--client/pages/userActivity/userActivity.wxml-->
-<text>client/pages/userActivity/userActivity.wxml</text>
+<import src="../eventList/eventList"/>
+<view class="container">
+<!--
+  <view class="header">
+    <input class="search" placeholder="{{ subtitle }}" placeholder-class="search-placeholder" auto-focus bindchange="handleSearch"/>
+  </view>
+-->
+  <template is="my-event-list" data="{{ myEvents, loading, hasMore }}"/>
+</view>

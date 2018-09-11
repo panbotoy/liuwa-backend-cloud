@@ -14,6 +14,21 @@
   </view>
 </template>
 
+<template name="my-event-list">
+  <view class="list">
+    <template is="my-event" data="{{ item }}" wx:for="{{ myEvents }}" wx:key="id"/>
+    <view class="tips">
+      <view wx:if="{{ hasMore }}">
+        <image src="/images/loading.gif" mode="aspectFill"/>
+        <text>玩了命的加载中...</text>
+      </view>
+      <view wx:else>
+        <text>没有更多内容了</text>
+      </view>
+    </view>
+  </view>
+</template>
+
 <!-- Single event card component. -->
 <template name="event">
   <navigator url="../item/item?id={{ item.id }}">
@@ -26,6 +41,19 @@
       </view>
       <view class="badge">
         <text>HOT</text>
+      </view>
+    </view>
+  </navigator>
+</template>
+
+<template name="my-event">
+  <navigator url="../item/item?id={{ item.id }}">
+    <view class="item">
+      <image class="eventImage" src="{{ item.images.small }}"></image>
+      <view class="info">
+        <text class="title">{{ item.title }}</text>
+        <text class="description">{{ item.description }}</text>
+        <view class="application">已报名：大人{{ item.myApplication.adult }}位，儿童{{ item.myApplication.children }}位</view>
       </view>
     </view>
   </navigator>

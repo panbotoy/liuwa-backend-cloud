@@ -41,14 +41,13 @@ var showModel = (title, content) => {
 
 var events = require('../testdata/data_events.js')
 
-function getEvents() {
-  return events.movies;
-}
-
 function getHomeEvents() {
   return events.home_events;
 }
+function getMyEvents() {
+  return events.my_events;
+}
 
 module.exports = { formatTime, showBusy, showSuccess, showModel }
-module.exports.getEvents = getEvents;
 module.exports.getHomeEvents = getHomeEvents;
+module.exports.getMyEvents = getMyEvents;

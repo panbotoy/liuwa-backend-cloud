@@ -9,7 +9,6 @@ Page({
         logged: false,
         takeSession: false,
         requestResult: '',
-        movies: [],
         homeEvents: [],
     },
 
@@ -17,13 +16,10 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var movies = util.getEvents();
     var homeEvents = util.getHomeEvents();
     this.setData({
-      movies:movies.data,
       homeEvents:homeEvents.data,
     });
-
   },
 
     // 用户登录示例
