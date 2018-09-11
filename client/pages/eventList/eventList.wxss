@@ -1,5 +1,8 @@
 .list {
   height: 100%;
+  background: #FFFFFF;
+  margin-top:10px;
+  border-radius: 2%;
 }
 
 .list .item {
@@ -10,9 +13,10 @@
 }
 
 .list .item .poster {
-  width: 128rpx;
-  height: 168rpx;
+  width: 256rpx;
+  height: 256rpx;
   margin-right: 20rpx;
+  border-radius: 50%;
 }
 
 .list .item .meta {
@@ -26,12 +30,13 @@
 }
 
 .list .item .meta .title {
-  font-size: 32rpx;
+  font-size: 14pt;
 }
 
 .list .item .meta .sub-title {
-  font-size: 22rpx;
-  color: #c0c0c0;
+  margin-top: 10rpx;
+  font-size: 11pt;
+  color: #888888;
 }
 
 .list .item .meta .artists {
@@ -42,10 +47,9 @@
 .list .item .rating text {
   display: inline-block;
   width: 40rpx;
-  font-size: 28rpx;
-  font-weight: bold;
+  font-size: 16rpx;
   text-align: center;
-  background-color: rgba(247, 76, 49, 0.8);
+  background-color: rgba(247, 75, 49, 0.904);
   color: #fff;
   padding: 10rpx;
   border-radius: 20rpx;

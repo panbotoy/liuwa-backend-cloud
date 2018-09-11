@@ -21,11 +21,11 @@
       <image class="poster" src="{{ item.subject.images.small }}"></image>
       <view class="meta">
         <text class="title">{{ item.subject.title }}</text>
-        <text class="sub-title">{{ item.subject.original_title }} ({{ item.subject.year }})</text>
-        <view class="artists">导演：<block wx:for="{{ item.directors }}" wx:key="id"> {{ item.name }} </block></view>
+        <text class="sub-title">{{ item.subject.original_title }}</text>
+        <!-- <view class="artists">导演：<block wx:for="{{ item.directors }}" wx:key="id"> {{ item.name }} </block></view> -->
       </view>
       <view class="rating">
-        <text>{{ item.subject.rating.average }}</text>
+        <text>HOT</text>
       </view>
     </view>
   </navigator>
