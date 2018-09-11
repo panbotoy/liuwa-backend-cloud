@@ -10,6 +10,7 @@ Page({
         takeSession: false,
         requestResult: '',
         movies: [],
+        homeEvents: [],
     },
 
   /**
@@ -17,8 +18,10 @@ Page({
    */
   onLoad: function (options) {
     var movies = util.getEvents();
+    var homeEvents = util.getHomeEvents();
     this.setData({
-      movies:movies.data
+      movies:movies.data,
+      homeEvents:homeEvents.data,
     });
 
   },

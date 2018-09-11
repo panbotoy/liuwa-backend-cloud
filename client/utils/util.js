@@ -45,5 +45,10 @@ function getEvents() {
   return events.movies;
 }
 
+function getHomeEvents() {
+  return events.home_events;
+}
+
 module.exports = { formatTime, showBusy, showSuccess, showModel }
 module.exports.getEvents = getEvents;
+module.exports.getHomeEvents = getHomeEvents;

@@ -3,7 +3,7 @@ module.exports = {
 }
 
 var movies = {
-  "id": 1,
+  "id": "1",
   "data": [
     {
       "subject": {
@@ -28,4 +28,29 @@ var movies = {
   ]
 }
 
+var home_events = {
+  "id": "0",
+  "data": [
+    {
+      "id": "1001",
+      "title": "9/15 Sushi Buffet",
+      "description": "幸福的小周末，跟姐妹们一起来聚会吧！",
+      "images": {
+        "small": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
+        "large": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
+      }
+    },
+    {
+      "id": "1002",
+      "title": "9/21 玫瑰园野餐",
+      "description": "接叶连枝千万绿，一花两色浅深红。玫瑰园花开正艳，快来一起遛娃吧！",
+      "images": {
+        "small": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
+        "large": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
+      }
+    },
+  ]
+}
+
 module.exports.movies = movies;
+module.exports.home_events = home_events;

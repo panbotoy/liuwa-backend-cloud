@@ -1,7 +1,7 @@
 <!-- Common event list component. -->
-<template name="movie-list">
+<template name="event-list">
   <view class="list">
-    <template is="{{ item.subject ? 'item2' : 'item1' }}" data="{{ item }}" wx:for="{{ movies }}" wx:key="id"/>
+    <template is="event" data="{{ item }}" wx:for="{{ homeEvents }}" wx:key="id"/>
     <view class="tips">
       <view wx:if="{{ hasMore }}">
         <image src="/images/loading.gif" mode="aspectFill"/>
@@ -14,17 +14,17 @@
   </view>
 </template>
 
-<!-- One single event card. -->
-<template name="item2">
-  <navigator url="../item/item?id={{ item.subject.id }}">
+<!-- Single event card component. -->
+<template name="event">
+  <navigator url="../item/item?id={{ item.id }}">
     <view class="item">
-      <image class="poster" src="{{ item.subject.images.small }}"></image>
-      <view class="meta">
-        <text class="title">{{ item.subject.title }}</text>
-        <text class="sub-title">{{ item.subject.original_title }}</text>
+      <image class="eventImage" src="{{ item.images.small }}"></image>
+      <view class="info">
+        <text class="title">{{ item.title }}</text>
+        <text class="description">{{ item.description }}</text>
         <!-- <view class="artists">导演：<block wx:for="{{ item.directors }}" wx:key="id"> {{ item.name }} </block></view> -->
       </view>
-      <view class="rating">
+      <view class="badge">
         <text>HOT</text>
       </view>
     </view>

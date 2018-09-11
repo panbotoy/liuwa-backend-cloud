@@ -12,39 +12,34 @@
   cursor: pointer;
 }
 
-.list .item .poster {
+.list .item .eventImage {
   width: 256rpx;
   height: 256rpx;
   margin-right: 20rpx;
   border-radius: 50%;
 }
 
-.list .item .meta {
+.list .item .info {
   flex: 1;
 }
 
-.list .item .meta .title,
-.list .item .meta .sub-title {
+.list .item .info .title,
+.list .item .info .description {
   display: block;
   margin-bottom: 15rpx;
 }
 
-.list .item .meta .title {
+.list .item .info .title {
   font-size: 14pt;
 }
 
-.list .item .meta .sub-title {
+.list .item .info .description {
   margin-top: 10rpx;
   font-size: 11pt;
   color: #888888;
 }
 
-.list .item .meta .artists {
-  font-size: 24rpx;
-  color: #999;
-}
-
-.list .item .rating text {
+.list .item .badge text {
   display: inline-block;
   width: 40rpx;
   font-size: 16rpx;
@@ -71,18 +66,4 @@
   width: 40rpx;
   height: 40rpx;
   margin-right: 20rpx;
-}
-
-.header {
-  display: flex;
-  justify-content: center;
-  border-bottom: 1rpx solid #ccc;
-}
-
-
-.header text {
-  padding: 20rpx 40rpx;
-  color: #999;
-  font-size: 38rpx;
-  text-align: center;
 }
