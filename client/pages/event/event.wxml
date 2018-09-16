@@ -1,21 +1,19 @@
 <!--client/pages/event/event.wxml-->
 <!-- 底部固定喜欢收藏 -->
 <view class="fixed-box">
-    <view class="{{addLike.add==1?'add':''}} like" bindtap="funLike">{{addLike.text}}</view>
-    <view class="{{addSave.add==1?'add':''}} save" bindtap="funSave">{{addSave.text}}</view>
-    <text class="{{(addLike.add==1||addSave.add==1)?'textadd':''}}"></text>
+    <view class="{{addLike.add==1?'add':''}} like" bindtap="apply">我要报名</view>
 </view>
 <!-- 详情 -->
 <view class="content">
 <!-- 菜品图片 -->
   <view class="title-image">
-    <image src="{{detail.img}}" mode="aspectFill"></image>
+    <image src="{{event.images.large}}" mode="aspectFill"></image>
   </view>
 </view>
 
 <view class="container detail-container">
     <!-- 菜品标题 -->
-  <text class="title-text">{{detail.name}}</text>
+  <text class="title-text">{{event.title}}</text>
   
   <!-- 菜品收藏点赞量 -->
   <view class="like-save-count">
@@ -25,16 +23,12 @@
     </view>
     <view class="like-count">
        <!-- <image src="../img/like1.png"></image> -->
-        {{detail.like}}
-    </view>
-    <view class="save-count">
-        <!-- <image src="../img/save1.png"></image> -->
-        {{detail.collect}}
+       <text>已{{event.totalApplications.total}}人报名</text>
     </view>
   </view>
   <!-- 菜品描述 -->
   <view class="food-text">
-    {{detail.describe}}
+    {{event.description}}
   </view>
   <!-- 菜品难度、时间 -->
   <view class="food-time">

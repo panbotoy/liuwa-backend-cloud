@@ -71,6 +71,11 @@ var complete_event = {
         "memberId": "0002",
       }
     ],
+    "totalApplications": {
+      "total": 7,
+      "adult": 4,
+      "children": 3,
+    },
     "applications": [
       {
         "memberNickName": "Helen",

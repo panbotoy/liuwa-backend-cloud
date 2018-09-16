@@ -47,7 +47,11 @@ function getHomeEvents() {
 function getMyEvents() {
   return events.my_events;
 }
+function getCompleteEvent() {
+  return events.complete_event;
+}
 
 module.exports = { formatTime, showBusy, showSuccess, showModel }
 module.exports.getHomeEvents = getHomeEvents;
 module.exports.getMyEvents = getMyEvents;
+module.exports.getCompleteEvent = getCompleteEvent;
