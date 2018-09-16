@@ -31,13 +31,12 @@
 
 <!-- Single event card component. -->
 <template name="event">
-  <navigator url="../item/item?id={{ item.id }}">
+  <navigator url="../event/event?id={{ event.id }}">
     <view class="item">
       <image class="eventImage" src="{{ item.images.small }}"></image>
       <view class="info">
         <text class="title">{{ item.title }}</text>
         <text class="description">{{ item.description }}</text>
-        <!-- <view class="artists">导演：<block wx:for="{{ item.directors }}" wx:key="id"> {{ item.name }} </block></view> -->
       </view>
       <view class="badge">
         <text>HOT</text>
@@ -47,7 +46,7 @@
 </template>
 
 <template name="my-event">
-  <navigator url="../item/item?id={{ item.id }}">
+  <navigator url="../event/event?id={{ event.id }}">
     <view class="item">
       <image class="eventImage" src="{{ item.images.small }}"></image>
       <view class="info">
