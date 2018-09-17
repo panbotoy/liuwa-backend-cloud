@@ -2,7 +2,14 @@ const knex = require('knex');
 
 /**
  * In order to figure out which environment current app is running without having to 
+ * switch between different configurations before deployment, creating this class to 
+ * instantiate the correct knex instance based on the request.header.host 
  * 
+ * If it's a local host, then use local environment
+ * If it's an EI machine, use EI environemnt
+ * 
+ * TODO(bopan): handle prod environemnt
+ * TODO(bopan): make sure it's not instantiate an instance for every request...
  */
 const dbInstance = (function() {
   var instance;

@@ -1,5 +1,15 @@
 const AbstractModel = require('./abstractModel.js').AbstractModel
+
+/**
+ * This class defines the data object used in controller and services layer.
+ * 
+ * It provides convenient methods for converting db response to input method and 
+ * converting from http request body to knex input to mysql
+ */
 class Member extends AbstractModel {
+  /**
+   * convert from knex response to domain model
+   */
   from(response) {
     this.id = response.id;
     this.firstName = response.first_name;
@@ -23,6 +33,9 @@ class Member extends AbstractModel {
     return this;
   }
 
+  /**
+   * Convert from domain model to knex input to DB
+   */
   toInput() {
     var dbInput = {};
     dbInput.id = this.id;
