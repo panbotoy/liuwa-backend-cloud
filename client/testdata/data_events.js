@@ -10,8 +10,8 @@ var home_events = {
       "title": "9/15 Sushi Buffet",
       "description": "幸福的小周末，跟姐妹们一起来聚会吧！",
       "images": {
-        "small": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
-        "large": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
+        "small": "https://www.sanjose.org/sites/default/files/styles/jumbotron_desktop/public/2017-11/roses_0711.4.2_1280x600.jpg?itok=ddZLUJru",
+        "large": "https://www.sanjose.org/sites/default/files/styles/jumbotron_desktop/public/2017-11/roses_0711.4.2_1280x600.jpg?itok=ddZLUJru",
       }
     },
     {
@@ -19,8 +19,8 @@ var home_events = {
       "title": "9/21 玫瑰园野餐",
       "description": "接叶连枝千万绿，一花两色浅深红。玫瑰园花开正艳，快来一起遛娃吧！",
       "images": {
-        "small": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
-        "large": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
+        "small": "https://www.sanjose.org/sites/default/files/styles/jumbotron_desktop/public/2017-11/roses_0711.4.2_1280x600.jpg?itok=ddZLUJru",
+        "large": "https://www.sanjose.org/sites/default/files/styles/jumbotron_desktop/public/2017-11/roses_0711.4.2_1280x600.jpg?itok=ddZLUJru",
       }
     },
   ]
@@ -55,8 +55,8 @@ var complete_event = {
     "suggestedAgeGroup": "0-3",
     "detailedDescription": "店里提供high chair, 欢迎带娃带家属哟！需要提前预定，所以9月12号截止报名。Tommie Buffet有寿司点心中式饭菜，价格实惠，味道还很不错哟！",
     "images": {
-      "small": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
-      "large": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
+      "small": "https://media-cdn.tripadvisor.com/media/photo-s/05/0b/b0/28/teppan-sushi-teppanyaki.jpg",
+      "large": "https://media-cdn.tripadvisor.com/media/photo-s/05/0b/b0/28/teppan-sushi-teppanyaki.jpg",
       "wechatGroupQrImage": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
     },
     "organizers": [

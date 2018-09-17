@@ -18,8 +18,8 @@
   <!-- 菜品收藏点赞量 -->
   <view class="like-save-count">
     <view class="author">
-        <image src="{{detail.headimgurl}}"></image>
-        {{detail.author}}
+        <image src="{{event.organizers[0].avatar}}"></image>
+        {{event.organizers[0].nickname}}
     </view>
     <view class="like-count">
        <!-- <image src="../img/like1.png"></image> -->
@@ -30,6 +30,13 @@
   <view class="food-text">
     {{event.description}}
   </view>
+  <view class="food-text-detailed">
+     <image src="../../image/icon_idea.png"></image>
+     <text>{{event.detailedDescription}}</text>
+  </view>
+</view>
+
+<view class="container info-container">
   <!-- 菜品难度、时间 -->
   <view class="food-time">
     <view>烹饪难度：<text>{{detail.complexity}}</text></view>
