@@ -35,7 +35,7 @@ page {
 }
 .application-container{
     margin-top:10px;
-    margin-bottom:50px;
+    margin-bottom:60px;
     background: #FFFFFF;
 }
 .title-text{
@@ -132,7 +132,6 @@ view{
 }
 .event-info .info text {
   font-size:12pt;
-  color:#969696;
   flex: 1;
   margin-bottom:10px;
 }
@@ -161,15 +160,32 @@ view{
   display:block;
   clear:both;
 }
+
+.food-item image{
+  width:50rpx;
+  height:50rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.food-item text {
+  color:#969696;
+}
+.total-count {
+  text-align:right;
+  margin-top: 10px;
+  color:#969696;
+}
+
 .food-listbox01{
   width:100%;
   height:auto;
 }
 .food-list-title{
   width:100%;
-  margin:50rpx 0;
+  margin:20rpx 0;
   text-align: center;
-  font-size:13pt;
+  font-size:12pt;
 }
 .food-listbox01 .food-item{
   width:100%;

@@ -48,8 +48,13 @@
     <view class="food-list-title">—— 报名名单 ——</view>
     <view class="food-list" >
       <view class="food-item" wx:for="{{event.applications}}">
+        <image src="{{item.memberAvatar}}"></image>
         <text>{{item.memberNickName}}</text>
+        <text>{{item.application.adult}}大人 {{item.application.children}}小孩</text>
       </view>
+    </view>
+    <view class="total-count">
+      <text>{{event.totalApplications.adult}}大人、{{event.totalApplications.children}}小孩，共计{{event.totalApplications.total}}人</text>
     </view>
   </view>
 </view>
