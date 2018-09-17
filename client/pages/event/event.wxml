@@ -1,7 +1,7 @@
 <!--client/pages/event/event.wxml-->
 <!-- 底部固定喜欢收藏 -->
 <view class="fixed-box">
-    <view class="{{addLike.add==1?'add':''}} like" bindtap="apply">我要报名</view>
+  <view class="{{addLike.add==1?'add':''}} like" bindtap="preApply">我要报名</view>
 </view>
 <!-- 详情 -->
 <view class="content">
@@ -55,6 +55,17 @@
     </view>
     <view class="total-count">
       <text>{{event.totalApplications.adult}}大人、{{event.totalApplications.children}}小孩，共计{{event.totalApplications.total}}人</text>
+    </view>
+  </view>
+</view>
+
+<view class="wx-popup" hidden="{{flag}}">
+  <view class='popup-container'>
+    <view class="wx-popup-title">报名</view>
+    <view class="wx-popup-con"></view>
+    <view class="wx-popup-btn">
+      <text class="btn-no" bindtap='cancelApply'>取消</text>
+      <text class="btn-ok" bindtap='confirmApply'>确认</text>
     </view>
   </view>
 </view>

@@ -7,6 +7,7 @@ Page({
    */
   data: {
     event: {},
+    flag: true,
   },
 
   /**
@@ -66,5 +67,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  preApply: function () {
+    console.log("apply clicked");
+    this.setData({
+      flag: false
+    })
   }
 })
