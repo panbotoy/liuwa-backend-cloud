@@ -57,7 +57,6 @@ var complete_event = {
     "images": {
       "small": "https://media-cdn.tripadvisor.com/media/photo-s/05/0b/b0/28/teppan-sushi-teppanyaki.jpg",
       "large": "https://media-cdn.tripadvisor.com/media/photo-s/05/0b/b0/28/teppan-sushi-teppanyaki.jpg",
-      "wechatGroupQrImage": "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png",
     },
     "organizers": [
       {

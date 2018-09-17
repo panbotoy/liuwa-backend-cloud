@@ -33,6 +33,11 @@ page {
     margin-top:10px;
     background: #FFFFFF;
 }
+.application-container{
+    margin-top:10px;
+    margin-bottom:50px;
+    background: #FFFFFF;
+}
 .title-text{
   font-size:15pt;
   font-weight: bold;
@@ -114,6 +119,22 @@ view{
 }
 .food-text-detailed text{
   flex:1;
+}
+
+.event-info .info {
+  display: flex;
+}
+.event-info .info image {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+}
+.event-info .info text {
+  font-size:12pt;
+  color:#969696;
+  flex: 1;
+  margin-bottom:10px;
 }
 
 .food-time{

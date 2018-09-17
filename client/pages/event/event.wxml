@@ -37,45 +37,19 @@
 </view>
 
 <view class="container info-container">
-  <!-- 菜品难度、时间 -->
-  <view class="food-time">
-    <view>烹饪难度：<text>{{detail.complexity}}</text></view>
-    <view>烹饪时间：<text>{{detail.handle_time}}</text></view>
+  <view class="event-info">
+    <view class="info"><image src="../../image/icon_date.png"></image><text>{{event.date}}</text></view>
+    <view class="info"><image src="../../image/icon_location.png"></image><text>{{event.address}}</text></view>
+    <view class="info"><image src="../../image/icon_footprint.png"></image><text>{{event.suggestedAgeGroup}}岁</text></view>
   </view>
-  <!-- 食材清单 -->
+</view>
+<view class="container application-container">
   <view class="food-listbox01">
-    <view class="food-list-title">—— 食材清单 ——</view>
+    <view class="food-list-title">—— 报名名单 ——</view>
     <view class="food-list" >
-      <view class="food-item" wx:for="{{detail.inventory}}">
-        <text>{{item.food_name}}</text>
-        <text>{{item.food_how}}</text>
+      <view class="food-item" wx:for="{{event.applications}}">
+        <text>{{item.memberNickName}}</text>
       </view>
-    </view>
-  </view>
-  <!-- 做法步骤 -->
-  <view class="way-listbox">
-    <view class="food-list-title">—— 做法步骤 ——</view>
-     <view class="way-list">
-      <view class="way-item" wx:for="{{detail.step}}">
-        <text>{{index+1}}</text>{{item}}
-      </view>
-     </view>
-  </view>
-  <!-- 图片分享 -->
-  <view class="pic-listbox">
-     <view class="food-list-title">—— 图片分享 ——</view>
-     <view class="pic-list">
-      <view class="pic-item" wx:for="{{detail.thumbnail}}">
-        <text>{{index+1}}</text>
-        <image src="{{item}}" mode="aspectFill"></image>
-      </view>
-    </view>
-  </view>
-  <!-- 烹饪小窍门 -->
-  <view class="little-tip">
-    <view class="food-list-title">—— 烹饪小窍门 ——</view>
-    <view class="tip-content">
-        {{detail.tip}}
     </view>
   </view>
 </view>
