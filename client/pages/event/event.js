@@ -10,6 +10,7 @@ Page({
     flag: true,
     pickerArray: ["0","1","2","3","4","5","6"],
     adultPickerIndex: 0,
+    childPickerIndex: 0,
   },
 
   /**
@@ -72,14 +73,24 @@ Page({
   },
 
   preApply: function () {
-    console.log("apply clicked");
     this.setData({
       flag: false
     })
   },
 
   bindAdultPickerChange: function(e) {
-    console.log(e);
     this.setData({adultPickerIndex: e.detail.value})
+  },
+
+  bindChildPickerChange: function (e) {
+    this.setData({ childPickerIndex: e.detail.value })
+  },
+
+  cancelApply: function(e) {
+    this.setData({
+      flag: true,
+      adultPickerIndex: 0,
+      childPickerIndex: 0,
+    })
   }
 })

@@ -344,7 +344,6 @@ view{
   position: absolute;
   left: 50%;
   top: 50%;
- 
   width: 80%;
   max-width: 600rpx;
   border: 2rpx solid #ccc;
@@ -352,14 +351,14 @@ view{
   box-sizing: bordre-box;
   transform: translate(-50%, -50%); 
   overflow: hidden;
-  background: #fff;
+  background: #F6F6F6;
 }
 .wx-popup-title {
   width: 100%;
   padding: 20rpx;
   text-align: center;
   font-size: 40rpx;
-  border-bottom: 2rpx solid red;
+  border-bottom: 2rpx solid rgba(255, 0, 0, 0.404);
 }
 .wx-popup-con {
   margin: 60rpx 10rpx;
@@ -377,5 +376,18 @@ view{
   width: 30%;
   height: 88rpx;
   border: 2rpx solid #ccc;
-  border-radius: 88rpx;
+  border-radius: 20rpx;
+}
+.con-row {
+  display:flex;
+  margin-bottom:10px;
+}
+.picker {
+  flex:1;
+  width:40px;
+  background:#fff;
+}
+.pickerLabel {
+  width:80px;
+  margin-right:10px;
 }

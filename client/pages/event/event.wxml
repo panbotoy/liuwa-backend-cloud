@@ -63,12 +63,28 @@
   <view class='popup-container'>
     <view class="wx-popup-title">报名</view>
     <view class="wx-popup-con">
+      <view class="con-row">
+      <view class="pickerLabel">
+        成人
+      </view>
       <picker bindchange="bindAdultPickerChange" value="{{adultPickerIndex}}" range="{{pickerArray}}">
         <view class="picker">
-          {{pickerArray[adultPickerIndex]}}成人
+          {{pickerArray[adultPickerIndex]}}
         </view>
       </picker>
+      </view>
+      <view class="con-row">
+      <view class="pickerLabel">
+        小孩
+      </view>
+      <picker bindchange="bindChildPickerChange" value="{{childPickerIndex}}" range="{{pickerArray}}">
+        <view class="picker">
+          {{pickerArray[childPickerIndex]}}
+        </view>
+      </picker>
+      </view>
     </view>
+
     <view class="wx-popup-btn">
       <text class="btn-no" bindtap='cancelApply'>取消</text>
       <text class="btn-ok" bindtap='confirmApply'>确认</text>
