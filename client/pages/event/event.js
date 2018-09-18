@@ -8,6 +8,8 @@ Page({
   data: {
     event: {},
     flag: true,
+    pickerArray: ["0","1","2","3","4","5","6"],
+    adultPickerIndex: 0,
   },
 
   /**
@@ -74,5 +76,10 @@ Page({
     this.setData({
       flag: false
     })
+  },
+
+  bindAdultPickerChange: function(e) {
+    console.log(e);
+    this.setData({adultPickerIndex: e.detail.value})
   }
 })

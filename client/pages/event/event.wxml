@@ -62,7 +62,13 @@
 <view class="wx-popup" hidden="{{flag}}">
   <view class='popup-container'>
     <view class="wx-popup-title">报名</view>
-    <view class="wx-popup-con"></view>
+    <view class="wx-popup-con">
+      <picker bindchange="bindAdultPickerChange" value="{{adultPickerIndex}}" range="{{pickerArray}}">
+        <view class="picker">
+          {{pickerArray[adultPickerIndex]}}成人
+        </view>
+      </picker>
+    </view>
     <view class="wx-popup-btn">
       <text class="btn-no" bindtap='cancelApply'>取消</text>
       <text class="btn-ok" bindtap='confirmApply'>确认</text>
