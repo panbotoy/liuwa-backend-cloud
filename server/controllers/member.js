@@ -1,5 +1,5 @@
 const bodyParser = require('body-parser')
-const Member = require('../models/member.js').Member
+const Member = require('../models/member.js')
 const memberService = require('../services/memberService.js')
 
 /**

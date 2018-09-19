@@ -1,5 +1,5 @@
 const dbInstance = require('../ds/dbInstance.js').dbInstance.getInstance
-const Member = require('../models/member.js').Member
+const Member = require('../models/member.js')
 
 /**
  * This class handles business logic + database operations related to {@link Member}
@@ -15,8 +15,7 @@ class MemberService {
   /**
    * Get a member given a memberId
    */
-  async get(ctx, memberId) {
-    var id = parseFloat(ctx.params.id);
+  async get(ctx, id) {
     return await dbInstance(ctx)('member').select('*').where('id', id).then(res => {
       var member = new Member({}).from(res[0]);
       return member;
@@ -41,10 +40,11 @@ class MemberService {
    * update a member for the given Id with the member json input
    */
   async update(ctx, id, memberPatch) {
-    var id = parseFloat(ctx.params.id);
     // remove system default values
     delete memberPatch.isSystemAdmin;
     delete memberPatch.createdAt;
+    delete memberPatch.registrationId;
+    delete memberPatch.registrationType;
     // populate system default values for read only fields
     memberPatch.updatedAt = dbInstance(ctx).fn.now();
     return await dbInstance(ctx)('member').select('*').where('id', id).then(res => {

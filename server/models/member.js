@@ -6,6 +6,8 @@ const AbstractModel = require('./abstractModel.js').AbstractModel
  * It provides convenient methods for converting db response to input method and 
  * converting from http request body to knex input to mysql
  */
+const validRegistrationTypes = ['WECHAT', 'EMAIL', 'FACEBOOK'];
+
 class Member extends AbstractModel {
   /**
    * convert from knex response to domain model
@@ -17,6 +19,8 @@ class Member extends AbstractModel {
     this.nickName = response.nick_name;
     this.email = response.email;
     this.phoneNumber = response.phoneNumber;
+    this.registrationId = response.registration_id;
+    this.registrationType = response.registration_type;
     this.occupation = response.occupation;
     this.profileImage = response.profile_img;
     this.location = {};
@@ -37,6 +41,7 @@ class Member extends AbstractModel {
    * Convert from domain model to knex input to DB
    */
   toInput() {
+    this._validateEventTypes(this.registrationType);
     var dbInput = {};
     dbInput.id = this.id;
     dbInput.first_name = this.firstName;
@@ -44,6 +49,8 @@ class Member extends AbstractModel {
     dbInput.nick_name = this.nickName;
     dbInput.email = this.email;
     dbInput.phone_number = this.phoneNumber;
+    dbInput.registration_id = this.registrationId;
+    dbInput.registration_type = this.registrationType;
     dbInput.occupation = this.occupation;
     dbInput.profile_img = this.profileImage;
     dbInput.address1 = this.location.address1;
@@ -58,5 +65,11 @@ class Member extends AbstractModel {
     dbInput.is_system_admin = this.isSystemAdmin;
     return dbInput;
   }
+
+  _validateEventTypes(registrationType) {
+    if (!validRegistrationTypes.includes(registrationType)) {
+      throw new Error("Error trying to validate registration type " + registrationType + ". Valid registration types are " + validRegistrationTypes);
+    }
+  }
 }
-module.exports.Member = Member;
+module.exports = Member;

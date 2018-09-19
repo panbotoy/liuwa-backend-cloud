@@ -2,8 +2,10 @@
 CREATE TABLE member (id BIGINT NOT NULL AUTO_INCREMENT, 
                      email VARCHAR(100) NOT NULL, 
                      phone_number VARCHAR(30),
+                     registration_id VARCHAR(100) NOT NULL,
+                     registration_type VARCHAR(20) NOT NULL,
                      nick_name VARCHAR(30) NOT NULL,
-                     first_name VARCHAR(30) NOT NULL, 
+                     first_name VARCHAR(30) NOT NULL,
                      last_name VARCHAR(30) NOT NULL, 
                      occupation VARCHAR(50),
                      profile_img VARCHAR(200),
@@ -21,6 +23,7 @@ CREATE TABLE member (id BIGINT NOT NULL AUTO_INCREMENT,
 );
 ALTER TABLE `member` ADD UNIQUE `unique_index_i1`(`email`);
 ALTER TABLE `member` ADD UNIQUE `unique_index_i2`(`nick_name`);
+
 -- create table for baby
 CREATE TABLE baby (id BIGINT NOT NULL AUTO_INCREMENT, 
                    first_name VARCHAR(30) NOT NULL, 
@@ -67,8 +70,8 @@ CREATE TABLE events (id BIGINT NOT NULL AUTO_INCREMENT,
                     start_at DATETIME NOT NULL,
                     end_at DATETIME,
                     enrollment_end_at DATETIME,
-                    published_at DATETIME NOT NULL,
-                    closed_at DATETIME NOT NULL,
+                    published_at DATETIME,
+                    closed_at DATETIME,
                     created_at DATETIME NOT NULL,
                     updated_at DATETIME NOT NULL,
                     PRIMARY KEY (id)
@@ -99,11 +102,11 @@ ALTER TABLE `event_tags` ADD UNIQUE `unique_index`(`event_id`, `tag_id`);
 CREATE TABLE applications (event_id BIGINT NOT NULL, 
                            member_id BIGINT NOT NULL,
                            application_status VARCHAR(10), -- 'PENDING', 'APPROVED', 'REJECTED', 'WITHDRAWED', 'DELETED'
+                           adults_count INT,
+                           baby_count INT,
                            created_at DATETIME NOT NULL,
                            updated_at DATETIME NOT NULL
 );
 CREATE INDEX applications_i1 on applications(event_id, application_status);  -- lookup tags for event
 CREATE INDEX applications_i2 on applications(member_id, application_status);  -- look up event with tags
 ALTER TABLE `applications` ADD UNIQUE `unique_index`(`event_id`, `member_id`);
-
-

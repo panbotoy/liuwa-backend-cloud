@@ -114,7 +114,7 @@
 - [Wafer2 客户端 SDK 使用文档](https://github.com/tencentyun/wafer2-client-sdk/blob/master/README.md)
 
 # backend development guide:
-a sample request to create member:
+# a sample request to create member:
 curl -X POST \
   http://localhost:5757/weapp/member \
   -H 'cache-control: no-cache' \
@@ -137,14 +137,14 @@ curl -X POST \
 	}
 }'
 
-a sample request to fetch member
+# a sample request to fetch member
 curl -X GET \
   http://localhost:5757/weapp/member/15 \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'postman-token: 45ee05cf-88d5-7e3e-004a-459834d43a19'
 
-a sample request to update membercurl -X PUT \
+# a sample request to update membercurl -X PUT \
   http://localhost:5757/weapp/member/16 \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
@@ -163,3 +163,38 @@ a sample request to update membercurl -X PUT \
 		"country": "USA"
 	}
 }'
+
+# create an event!
+curl -X POST \
+  http://localhost:5757/weapp/event \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 404dc417-5891-20d4-6cca-15373d9aa18c' \
+  -d '{
+	"memberId": 1,
+	"title": "Happy Tasting Event",
+	"description": "This is a great event",
+	"images": ["http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png", "http://www.petspet.org/wp-content/uploads/2015/06/Fat-cat-1.png"],
+	"wechatGroupLink": null,
+	"attendeeNumber": 5,
+	"needApproval": true,
+	"eventType": "CLASS",
+	"minAge": 5,
+	"maxAge": 10,
+	"eventState": "OPEN",
+	"startAt": 100000,
+	"endAt": 10000000,
+	"enrollmentEndAt": 10000000,
+	"publishedAt": 100000,
+	"location": {
+		"address1": "007 Pin Oak Drive",
+		"address2": "",
+		"address3": "",
+		"city": "RainyVale",
+		"state": "CA",
+		"country": "USA"
+	}
+}'
+
+# a sampe request to fetch an event
+http://localhost:5757/weapp/event/1

@@ -38,4 +38,10 @@ router.post('/member', controllers.member.create)
 router.put('/member/:id', controllers.member.update)
 router.get('/member/test/:id', controllers.member.test)
 
+// a controller for event related APIs
+router.get('/event/:id', controllers.event.get)
+router.post('/event', controllers.event.create)
+router.put('/event/:id', controllers.event.update)
+router.get('/eventQuery', controllers.event.query)
+
 module.exports = router
